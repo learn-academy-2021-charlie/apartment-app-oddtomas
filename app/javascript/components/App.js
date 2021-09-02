@@ -77,7 +77,7 @@ class App extends React.Component {
           />
           {this.props.logged_in && (
             <Route
-              path="/apartmentnew"
+              path="/apartmentNew"
               render={(props) => {
                 return (
                   <ApartmentNew
