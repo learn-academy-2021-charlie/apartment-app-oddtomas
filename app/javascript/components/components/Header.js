@@ -10,7 +10,7 @@ class Header extends Component {
         <br></br>
         <NavLink to="/">Home</NavLink>
 
-        <NavLink to="/apartmentindex" className="nav-link">
+        <NavLink to="/apartmentsindex" className="nav-link">
           See All the Apartments
         </NavLink>
 
@@ -23,6 +23,12 @@ class Header extends Component {
           <a href={sign_in_route} className="nav-link">
             Sign In
           </a>
+        )}
+        {/* if logged in you can create an apartment/see the link */}
+        {logged_in && (
+          <NavLink to="/apartmentnew" className="nav-link">
+            Add an Apartment
+          </NavLink>
         )}
       </header>
     );
