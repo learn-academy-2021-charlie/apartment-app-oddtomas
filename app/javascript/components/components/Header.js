@@ -6,8 +6,8 @@ class Header extends Component {
     const { logged_in, sign_in_route, sign_out_route } = this.props;
     return (
       <header>
-        <NavLink to="/">Home</NavLink>
-        {/* second link for visuals while running rails s */}
+        <br></br>
+        <br></br>
         <NavLink to="/">Home</NavLink>
 
         <NavLink to="/apartmentindex" className="nav-link">
