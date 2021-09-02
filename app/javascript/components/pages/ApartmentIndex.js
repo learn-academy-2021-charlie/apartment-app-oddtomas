@@ -23,7 +23,7 @@ class ApartmentIndex extends Component {
                     </h1>
                   </div>
                   <br />
-                  <NavLink to={`/apartmentShow/${apartment.id}`}>
+                  <NavLink to={`/apartmentshow/${apartment.id}`}>
                     <Button>More Info</Button>
                   </NavLink>
                 </Card>

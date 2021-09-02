@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import ApartmentIndex from "./pages/ApartmentIndex";
 import ApartmentShow from "./pages/ApartmentShow";
+import Header from "./components/Header";
 import { Nav, NavItem, NavLink } from "reactstrap";
 
 class App extends React.Component {
@@ -33,41 +34,33 @@ class App extends React.Component {
     } = this.props;
     return (
       <Router>
-        <Nav>
+        {/* <Nav>
           <NavItem>
             <NavLink href="/">Home</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/apartmentIndex">Apartments</NavLink>
+            <NavLink href="/apartmentindex">Apartments</NavLink>
           </NavItem>
-        </Nav>
+        </Nav> */}
+        <Header {...this.props} />
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route
-            path="/apartmentIndex"
+            path="/apartmentindex"
             render={(props) => {
               return <ApartmentIndex apartments={this.state.apartments} />;
             }}
           />
           <Route
-            path="/apartmentShow/:id"
+            path="/apartmentshow/:id"
             render={(props) => {
               let id = +props.match.params.id;
-              let apartment = this.state.apartments.find((a) => a.id === id);
+              let apartment = this.state.apartments.find((a) => a.id === +id);
               return <ApartmentShow apartment={apartment} />;
             }}
           />
         </Switch>
-        {logged_in && (
-          <div>
-            <a href={sign_out_route}>Sign Out</a>
-          </div>
-        )}
-        {!logged_in && (
-          <div>
-            <a href={sign_in_route}>Sign In</a>
-          </div>
-        )}
       </Router>
     );
   }
