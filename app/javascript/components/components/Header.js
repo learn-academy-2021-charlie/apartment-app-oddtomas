@@ -24,7 +24,11 @@ class Header extends Component {
             Sign In
           </a>
         )}
-        {/* if logged in you can create an apartment/see the link */}
+        {logged_in && (
+          <NavLink to="/myapartments" className="nav-link">
+            My Apartments
+          </NavLink>
+        )}
         {logged_in && (
           <NavLink to="/apartmentnew" className="nav-link">
             Add an Apartment

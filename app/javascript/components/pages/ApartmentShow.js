@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Card, CardTitle, Col, Row } from "reactstrap";
+import { Nav, NavItem, NavLink, Link } from "reactstrap";
 
 class ApartmentShow extends Component {
   render() {
@@ -30,6 +31,7 @@ class ApartmentShow extends Component {
             </div>
           )}
         </div>
+        <NavLink href="/apartmentsindex">back</NavLink>
       </div>
     );
   }

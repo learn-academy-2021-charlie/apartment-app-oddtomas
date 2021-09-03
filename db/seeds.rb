@@ -30,8 +30,8 @@ apartments = [
     pets: 'all pets welcome'
   },
   {
-    street: '454 W River Dr',
-    city: 'Pennsauken',
+    street: '456 W River Dr',
+    city: 'Cherry Hill',
     state: 'NJ',
     manager: 'Method Man',
     email: 'method@testing.com',
