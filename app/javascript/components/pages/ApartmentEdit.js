@@ -1,22 +1,21 @@
 import React, { Component } from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 import { Redirect } from "react-router-dom";
 
-class ApartmentNew extends Component {
+class ApartmentEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
       form: {
-        street: "",
-        city: "",
-        state: "",
-        manager: "",
-        email: "",
-        price: "",
-        bedrooms: 0,
-        bathrooms: 0,
-        pets: "",
-        user_id: this.props.current_user.id,
+        street: this.props.apartment.street,
+        city: this.props.apartment.city,
+        state: this.props.apartment.state,
+        manager: this.props.apartment.manager,
+        email: this.props.apartment.email,
+        price: this.props.apartment.price,
+        bedrooms: this.props.apartment.bedrooms,
+        bathrooms: this.props.apartment.bathrooms,
+        pets: this.props.apartment.pets,
       },
       submitted: false,
     };
@@ -28,9 +27,10 @@ class ApartmentNew extends Component {
   };
 
   handleSubmit = () => {
-    this.props.createApartment(this.state.form);
+    this.props.editApartment(this.state.form, this.props.apartment.id);
     this.setState({ submitted: true });
   };
+
   render() {
     const {
       street,
@@ -44,8 +44,8 @@ class ApartmentNew extends Component {
       pets,
     } = this.state.form;
     return (
-      <div>
-        <h3>Add a New Apartment</h3>
+      <div className="page-body">
+        <h3>Edit an Apartment</h3>
         <div className="cards">
           <div className="card">
             <Form>
@@ -153,4 +153,4 @@ class ApartmentNew extends Component {
     );
   }
 }
-export default ApartmentNew;
+export default ApartmentEdit;
